@@ -1,0 +1,382 @@
+.container___form{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../images/image.avif);
+    background-size: cover;
+}
+
+
+.container___form form{
+    width: 700px;
+    height: auto;
+    padding: 10px;
+    background-color: #dfdfdf;
+}
+.butt{
+    width: 50%;
+    height: 30px;
+}
+.butte{
+    width: 10%;
+    height: 5vh;
+    background-color: black;
+    color: aliceblue;
+
+}
+.recherche{
+    background-color: #FFF;
+}
+
+.form-controler{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.breukh{
+    text-align: center;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: #FFF;
+    font-size: 1.2em;
+    margin-bottom: 1em
+}
+
+.form-controler input{
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+.bouroudj{
+    width: 40%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #FFF;
+    font-size: 1.2em;
+}
+.form-controler button.hauttableau.redirection.breukh{
+    width: 70%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #FFF;
+    margin-left: 25%;
+    font-size: 1.2em;
+}
+/* Partie tableau  */
+.tableau-style{
+    border-collapse: collapse;
+    min-width: 1000px;
+    width: auto;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    margin: 50px auto;
+    border: 2px solid #f3f3f3;
+    margin-left: 10%;
+    background-color: rgb(194, 194, 194);
+}
+ thead tr{
+    background-color: black;
+    color: #FFF;
+    text-align:left
+
+ }
+ th, td{
+    padding: 15px 20px;
+
+ }
+ tbody tr, td, th{
+    border: 1px solid #ddd;
+
+ }
+ tbody tr:nth-child(even){
+    background-color: #d6d6d6;
+ }
+ tbody tr:last-of-type{
+    border-bottom: 2px solid midnightblue;
+ }
+
+ .img-carte {
+    width: 18vw;
+    height: 35vh;
+}
+
+.erreur{
+    color: red;
+}
+
+.container__form__generic_product{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.title__form h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: left;
+    display: none;
+}
+
+.row_product{
+    width: 900px;
+    max-width: 100%;
+    height: auto;
+}
+
+.element__content{
+    display: flex;
+    margin: 5px;
+    width: 120%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rechercher__product form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.form__controler__product{
+    width: 882px;
+    height: 70px;
+    display: flex;
+}
+
+.butt__product{
+    width: 30%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #DFDFDF;
+    height: 40px;
+}
+
+.butte__product{
+    width: 100px;
+    height: 40px;
+    background: #000;
+    color: #FFF;
+    outline: none;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.separation__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box__product{
+    width: 250px;
+    height: 330px;
+    background-color: #DDD;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+.img {
+    width: 235px;
+    height: 200px;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+}
+
+.details__product{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.title__product{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.price__product{
+    font-size: 20px;
+    font-weight: 400;
+}
+.container___form .form_recherche{
+    width: 100%;
+    height: 12vh;
+}
+.form-controler .form_recherche input{
+     width: 70%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+.action__product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hauttableau{
+    /* border: 2px solid red; */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+}
+.redirection{
+   /* border: 2px solid yellow; */
+    width: 30%;
+}
+.barrederecherche{
+    /* border: 2px solid rgb(15, 121, 234); */
+    width: 40%;
+}
+.edit__product{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(62, 199, 32);
+    color: #FFF;
+    margin: 5px;
+    padding: 4px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.delete__product{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(199, 32, 32);
+    color: #FFF;
+    margin: 5px;
+    padding: 4px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.card{
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px;
+    display: none;
+    
+ }
+
+.nbrepage__product{
+    display: flex;
+    /* width: 100px; */
+    /* background: #000; */
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.nav__pagination
+{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+ .justify__product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+    height: 60px;
+    
+ }
+ .page__product {
+    background-color: black;
+    margin: 30px;
+    border-radius: 20%;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+.page__product a{
+    padding: 5px;
+    color: white;
+}
+@media screen and (max-width: 900px){
+    .container___form{
+        width: 100%;
+    }
+    .container___form form {
+        width: 100%;
+    }
+    .breukh{
+        margin-bottom: 2em;
+       
+    }
+    .responsivetableau{
+        overflow: auto;
+    }
+   
+  }
+  @media screen and (max-width: 300px){
+    .container___form{
+        width: 100%;
+    }
+    .container___form form {
+        width: 100%;
+    }
+    .breukh{
+        margin-bottom: 2em;
+       
+    }
+    .responsivetableau{
+        overflow: auto;
+    }
+   
+  }

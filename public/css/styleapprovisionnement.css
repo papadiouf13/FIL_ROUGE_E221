@@ -1,0 +1,253 @@
+
+.container__form{
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+body{
+    background-image: url(../images/image.avif);
+    background-size: cover;
+}
+.jreukh{
+    width: 35%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #FFF;
+    font-size: 1em;
+    margin-left: 42%;
+    
+}
+.formulaire{
+    width: 60%;
+    background-color: rgb(217, 214, 214);
+}
+.tableau{
+    border: 2px solid rgb(25, 218, 76);
+    width: 60%;
+}
+.ligne1{
+    display: flex;
+    justify-content: space-between;
+}
+.inputs input{
+    width: 100%;
+    height: 5vh;
+}
+.inputs select{
+    width: 100%;
+    height: 5vh;
+    font-size: 1em;
+}
+.b select{
+    width: 100%;
+    height: 5vh;
+    font-size: 1em;
+}
+.inputs label{
+    font-size: 1.2em;
+}
+.inp input{
+    width: 30%;
+    height: 5vh;
+}
+.valeur_total{
+    font-size: 1.2em;
+    text-align: center;
+}
+.btn_enregistrer{
+    background-color: black;
+    font-size: 1.2em;
+    color: #FFF;
+}
+.btn-ajouter{
+    background-color: black;
+    color: aliceblue;
+    width: 10%;
+    height: 4.5vh;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+.a{
+    width: 40%;
+    padding: 1px;
+}
+.a input{
+    width: 80%;
+    height: 5vh;
+}
+.a select{
+    width: 80%;
+    height: 5vh;
+    font-size: 1em;
+}
+.a label{
+    font-size: 1.2em;
+}
+.a button{
+    background-color: black;
+    color: aliceblue;
+    width: 10%;
+    height: 4.5vh;
+    font-size: 1.2em;
+}
+.b{
+    display: flex;
+    justify-content: space-around;
+}
+.for input{
+    width: 100%;
+    height: 5vh;
+}
+.for label{
+    font-size: 1.2em;
+}
+.b button{
+    width: 8%;
+    height: 5vh;
+    margin: 3%;
+    background-color: black;
+    color: white;
+}
+.tableau-style{
+    border-collapse: collapse;
+    min-width: 100%;
+    width: auto;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border: 2px solid #f3f3f3;
+    background-color: rgb(198, 197, 196);
+}
+ thead tr{
+    background-color: black;
+    color: #FFF;
+    text-align:left
+
+ }
+ th, td{
+    padding: 15px 20px;
+
+ }
+ tbody tr, td, th{
+    border: 1px solid #ddd;
+
+ }
+ tbody tr:nth-child(even){
+    background-color: #f3f3f3;
+ }
+ tbody tr:last-of-type{
+    border-bottom: 2px solid midnightblue;
+ }
+ .glototal{
+    width: 60%;
+    display: flex;
+    justify-content: end;
+ }
+ .glototal input{
+    width: 100%;
+    height: 7vh;
+    border: 2px solid;
+ }
+ .glototal label{
+    font-size: 1.2em;
+ }
+ .total{
+   
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+ }
+ .total button{
+    background-color: black;
+    color: #FFF;
+    width: 60%;
+    height: 5vh;
+    margin-top: 5%;
+    margin-left: auto;
+ }
+
+ .hauttableau{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.redirection{
+   /* border: 2px solid yellow; */
+    width: 48%;
+}
+.barrederecherche{
+   /*  border: 2px solid rgb(15, 121, 234); */
+    width: 40%;
+}
+.barrederecherche input{
+    border: 2px solid;
+    width: 85%;
+    height: 30px;
+    border-radius: 5px;
+}
+.barrederecherche button{
+    background-color: black;
+    color: #FFF;
+}
+.breukh{
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #FFF;
+    font-size: 1em;
+    
+}
+.nbrepage__product{
+    display: flex;
+    /* width: 100px; */
+    /* background: #000; */
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.nav__pagination
+{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+ .justify__product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+    height: 60px;
+    
+ }
+ .page__product {
+    background-color: black;
+    margin: 30px;
+    border-radius: 20%;
+    padding: 5px;
+    display: inline-block;
+
+}
+
+.page__product a{
+    padding: 5px;
+    color: white;
+}
