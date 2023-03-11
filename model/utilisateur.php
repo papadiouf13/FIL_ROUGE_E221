@@ -29,7 +29,7 @@ function edit_utilisateur_db(array $utilisateur)
 
     $conn = get_connection();
     try {
-        $sql = "UPDATE utilisateur SET nomC=:nomC,prenomC=:prenomC,telephoneC=:telephoneC,adresseC=:adresseC,photoC=:photoC WHERE idC=:idC";
+        $sql = "UPDATE user SET nomU=:nomU,prenomU=:prenomU,telephoneU=:telephoneU,adresseU=:adresseU,photoU=:photoU,salaireU=:salaireU,login=:login,password=:password WHERE idU=:idU";
         $stmt = $conn->prepare($sql);
 
         $stmt->execute($utilisateur);

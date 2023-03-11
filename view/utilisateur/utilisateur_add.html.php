@@ -25,7 +25,7 @@ if (isset($_SESSION["arrayError"])) {
     <div class="container___form">
     <button class="breukh"><a href="<?=WEB_ROUTE."?controller=utilisateur&view=utilisateur_list"?>" style="color:aliceblue">Liste utilisateur</a>
     </button>
-        <form action="<?=WEB_ROUTE?>" method="post">
+    <form action="<?= WEB_ROUTE ?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="controller" value="utilisateur">
                 <?php if(!isset($utilisateurEdit) || $utilisateurEdit['idU'] == null): ?>
                     <input type="hidden" name="action" value="add">
@@ -68,8 +68,8 @@ if (isset($_SESSION["arrayError"])) {
                     <?php endforeach; ?>
                 </select>
                 <label for="libelle" class="form-label">Photo</label>
-                <input type="file" class="form-control" name="photoU" id="photoC" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['photoC'] : '' ?>">
-                <span class="erreur"><?=isset($arrayError) && isset($arrayError["photoC"]) ? $arrayError["photoC"] : '';?></span>
+                <input type="file" class="form-control" name="photoU" id="photoU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['photoU'] : '' ?>">
+                <span class="erreur"><?=isset($arrayError) && isset($arrayError["photoU"]) ? $arrayError["photoU"] : '';?></span>
 
             </div>
             <div class="form-controler">

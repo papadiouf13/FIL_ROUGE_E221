@@ -28,16 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['action'])) {
         if ($_POST["action"] == "add") {
-            ajout_utilisateur($_POST);
+            ajout_utilisateur($_POST, $_FILES);
         } elseif ($_POST["action"] == "editer") {
-            edit_utilisateur($_POST);
+            edit_utilisateur($_POST, $_FILES);
         }
     }
 }
 
 
 
-function ajout_utilisateur($data)
+function ajout_utilisateur($data, $files)
 {
 
     $arrayError = array();
@@ -61,9 +61,9 @@ function ajout_utilisateur($data)
             "login" => $login,
             "password" => $password,
             "idR" => $idR,
-            "photoU" => $photoU,
+            "photoU" => $files['photoU']['name'],
         ];
-
+        to_upload_Utilisateur($files, "photoU");
         $result = ajout_utilisateur_db($utilisateur);
         if ($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;
@@ -79,7 +79,7 @@ function ajout_utilisateur($data)
     }
 }
 
-function edit_utilisateur($data)
+function edit_utilisateur($data, $files)
 {
     $arrayError = array();
     extract($data);
@@ -90,7 +90,7 @@ function edit_utilisateur($data)
     valide_libelle($arrayError, "salaireU", $salaireU);
     valide_libelle($arrayError, "login", $login);
     valide_libelle($arrayError, "password", $password);
-    valide_libelle($arrayError, "idR", $idR);
+    //valide_libelle($arrayError, "idR", $idR);
 
     if (empty($arrayError)) {
         $utilisateur = [
@@ -102,10 +102,11 @@ function edit_utilisateur($data)
             "login" => $login,
             "password" => $password,
             "idR" => $idR,
-            "photoU" => $photoU,
+            "photoU" => $files['photoU']['name'],
         ];
-
+        to_upload_Utilisateur($files, "photoU");
         $result = edit_utilisateur_db($utilisateur);
+        var_dump($result);die;
         if ($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;
         } else {
