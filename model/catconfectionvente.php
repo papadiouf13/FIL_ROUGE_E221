@@ -70,4 +70,11 @@ function get_categorieconfectionvente_by_idCAV_db(int $idCAV) {
         return false;
     }
 }
+function filtre_by_categorievente($filtre): array
+{
+    $conn = get_connection();
+    $stmt =$conn->prepare("SELECT * FROM categoriearticlevente WHERE libelleCAV LIKE '%".$filtre."%'");
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
 //-----------------------------------------------------------//

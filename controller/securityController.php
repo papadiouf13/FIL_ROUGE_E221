@@ -24,16 +24,16 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
 		require(ROUTE_DIR.'view/security/connexion.html.php');
 	    }
 }
-function connexion(string $login, string $password):void{
+function connexion(string $loginU, string $passwordU):void{
     //die('okkkkkkkkkkkkkkkkkk');
 	
 	$arrayError=array();
 	
-	validation_login($login,'login',$arrayError);
-	validation_password($password,'password',$arrayError);
+	validation_login($loginU,'loginU',$arrayError);
+	validation_password($passwordU,'passwordU',$arrayError);
 	
 	if (form_valid($arrayError)) {
-		$user=find_user_by_login_password($login, $password);
+		$user=find_user_by_login_password($loginU, $passwordU);
 			
 		if (count($user)==0 ){
 			$arrayError['erreur']='login ou password incorrect';

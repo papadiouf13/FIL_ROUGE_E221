@@ -30,7 +30,7 @@ body{
     background-color: rgb(217, 214, 214);
 }
 .tableau{
-    border: 2px solid rgb(25, 218, 76);
+    /* border: 2px solid rgb(25, 218, 76); */
     width: 60%;
 }
 .ligne1{
@@ -63,12 +63,12 @@ body{
     text-align: center;
 }
 .btn_enregistrer{
-    background-color: black;
+    background-color: rgb(73, 86, 236);
     font-size: 1.2em;
     color: #FFF;
 }
 .btn-ajouter{
-    background-color: black;
+    background-color: rgb(73, 86, 236);
     color: aliceblue;
     width: 10%;
     height: 4.5vh;
@@ -92,7 +92,7 @@ body{
     font-size: 1.2em;
 }
 .a button{
-    background-color: black;
+    background-color: rgb(73, 86, 236);
     color: aliceblue;
     width: 10%;
     height: 4.5vh;
@@ -110,10 +110,11 @@ body{
     font-size: 1.2em;
 }
 .b button{
-    width: 8%;
-    height: 5vh;
+    width: 100%;
+    height: 4vh;
     margin: 3%;
-    background-color: black;
+    margin-top: 30px;
+    background-color: rgb(73, 86, 236);
     color: white;
 }
 .tableau-style{
@@ -126,7 +127,7 @@ body{
     background-color: rgb(198, 197, 196);
 }
  thead tr{
-    background-color: black;
+    background-color: rgb(73, 86, 236);
     color: #FFF;
     text-align:left
 

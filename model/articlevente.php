@@ -45,11 +45,18 @@ function get_articlevente_by_id_bd(int $idAV) {
     $conn = null;
     return $stmt->fetch();
 }
-function filtre_by_libellevente($libelleAV): array
+/* function filtre_by_libellevente($libelleAV): array
 {
     $conn = get_connection();
     $stmt =$conn->prepare("SELECT * FROM articlevente WHERE libelleAV=?");
     $stmt->execute(array($libelleAV));
+    return $stmt->fetchAll();
+} */
+function filtre_by_libellevente($filtre): array
+{
+    $conn = get_connection();
+    $stmt =$conn->prepare("SELECT * FROM articlevente WHERE libelleAV LIKE '%".$filtre."%'");
+    $stmt->execute();
     return $stmt->fetchAll();
 }
 function get_articlevente_by_idAV_db(int $idAV)

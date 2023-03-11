@@ -46,11 +46,18 @@ function get_articleconfection_by_id_bd(int $idAC) {
     $conn = null;
     return $stmt->fetch();
 }
-function filtre_by_libelle($libelleAC): array
+/* function filtre_by_libelle($libelleAC): array
 {
     $conn = get_connection();
-    $stmt =$conn->prepare("SELECT * FROM articleconfection WHERE libelleAC=?");
+    $stmt =$conn->prepare("SELECT * FROM articleconfection WHERE libelleAC");
     $stmt->execute(array($libelleAC));
+    return $stmt->fetchAll();
+} */
+function filtre_by_libelle($filtre): array
+{
+    $conn = get_connection();
+    $stmt =$conn->prepare("SELECT * FROM articleconfection WHERE libelleAC LIKE '%".$filtre."%'");
+    $stmt->execute();
     return $stmt->fetchAll();
 }
 function get_articleconfection_by_idAC_db(int $idAC)

@@ -4,8 +4,14 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     if (isset($_GET['view'])) {
         if ($_GET['view'] == "categorievente") {
             require_once(ROUTE_DIR . 'view/catvente/categorievente_add.html.php');
-        } elseif ($_GET['view'] == "categorievente_list") {
-            $categorieconfectionlist = get_all_categorieconfectionvente_db();
+        }elseif ($_GET['view'] == "categorievente_list") {
+            $page = 1;
+            if (isset($_GET['page'])) {
+                $page = (int)$_GET['page'];
+            }
+            $totalList = show_all_categorievente();
+            $categorieventelist = get_list_per_page($totalList,$page, 8);
+            $nbrPage = get_nbrpage($totalList, 8);
             require_once(ROUTE_DIR . 'view/catvente/categorievente_list.html.php');
         } elseif ($_GET['view'] == "edit") {
             $idCAV = (int) $_GET["idCAV"];
@@ -77,4 +83,14 @@ function edit_categorieconfectionvente($data)
         $_SESSION["arrayError"] = $arrayError;
     }
     header("Location:" . WEB_ROUTE . "?controller=catventeController&view=categorievente_list");
+}
+function show_all_categorievente()
+{
+    if (isset($_GET['OK'])) {
+        $categorieventelist = filtre_by_categorievente($_GET['recherche']);
+        return $categorieventelist;
+    } else {
+        $categorieventelist = get_all_categorieconfectionvente_db();
+        return $categorieventelist;
+   }
 }

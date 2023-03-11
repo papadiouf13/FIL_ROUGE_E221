@@ -5,7 +5,7 @@ function ajout_utilisateur_db(array $utilisateur)
 
     try {
         //var_dump($utilisateur);die;
-        $sql = "INSERT INTO user (prenomU,nomU,telephoneU,adresseU,salaireU,login,password,photoU,idR) VALUES(:prenomU,:nomU,:telephoneU,:adresseU,:salaireU,:login,:password,:photoU,:idR)";
+        $sql = "INSERT INTO user (prenomU,nomU,telephoneU,adresseU,salaireU,loginU,passwordU,photoU,idR) VALUES(:prenomU,:nomU,:telephoneU,:adresseU,:salaireU,:loginU,:passwordU,:photoU,:idR)";
         $stmt = $conn->prepare($sql);
         //bindParam permet de lier les parametres donnees aux données qui doivent etre inserer dans la base de données
         $stmt->bindParam(':prenomU', $utilisateur['prenomU']);
@@ -14,8 +14,8 @@ function ajout_utilisateur_db(array $utilisateur)
         $stmt->bindParam(':adresseU', $utilisateur['adresseU']);
         $stmt->bindParam(':photoU', $utilisateur['photoU']);
         $stmt->bindParam(':salaireU', $utilisateur['salaireU']);
-        $stmt->bindParam(':login', $utilisateur['login']);
-        $stmt->bindParam(':password', $utilisateur['password']);
+        $stmt->bindParam(':loginU', $utilisateur['loginU']);
+        $stmt->bindParam(':passwordU', $utilisateur['passwordU']);
         $stmt->bindParam(':idR', $utilisateur['idR']);
         $stmt->execute($utilisateur);
         return true;
@@ -29,7 +29,7 @@ function edit_utilisateur_db(array $utilisateur)
 
     $conn = get_connection();
     try {
-        $sql = "UPDATE user SET nomU=:nomU,prenomU=:prenomU,telephoneU=:telephoneU,adresseU=:adresseU,photoU=:photoU,salaireU=:salaireU,login=:login,password=:password WHERE idU=:idU";
+        $sql = "UPDATE user SET nomU=:nomU,prenomU=:prenomU,telephoneU=:telephoneU,adresseU=:adresseU,photoU=:photoU,salaireU=:salaireU,loginU=:loginU,passwordU=:passwordU WHERE idU=:idU";
         $stmt = $conn->prepare($sql);
 
         $stmt->execute($utilisateur);

@@ -47,8 +47,8 @@ function ajout_utilisateur($data, $files)
     valide_libelle($arrayError, "telephoneU", $telephoneU);
     valide_libelle($arrayError, "adresseU", $adresseU);
     valide_libelle($arrayError, "salaireU", $salaireU);
-    valide_libelle($arrayError, "login", $login);
-    valide_libelle($arrayError, "password", $password);
+    valide_libelle($arrayError, "loginU", $loginU);
+    valide_libelle($arrayError, "passwordU", $passwordU);
     valide_libelle($arrayError, "idR", $idR);
 
     if (empty($arrayError)) {
@@ -58,12 +58,13 @@ function ajout_utilisateur($data, $files)
             "telephoneU" => $telephoneU,
             "adresseU" => $adresseU,
             "salaireU" => $salaireU,
-            "login" => $login,
-            "password" => $password,
+            "loginU" => $loginU,
+            "passwordU" => $passwordU,
             "idR" => $idR,
             "photoU" => $files['photoU']['name'],
         ];
         to_upload_Utilisateur($files, "photoU");
+        //var_dump($utilisateur);die;
         $result = ajout_utilisateur_db($utilisateur);
         if ($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;
@@ -88,8 +89,8 @@ function edit_utilisateur($data, $files)
     valide_libelle($arrayError, "telephoneU", $telephoneU);
     valide_libelle($arrayError, "adresseU", $adresseU);
     valide_libelle($arrayError, "salaireU", $salaireU);
-    valide_libelle($arrayError, "login", $login);
-    valide_libelle($arrayError, "password", $password);
+    valide_libelle($arrayError, "loginU", $loginU);
+    valide_libelle($arrayError, "passwordU", $passwordU);
     //valide_libelle($arrayError, "idR", $idR);
 
     if (empty($arrayError)) {
@@ -99,14 +100,14 @@ function edit_utilisateur($data, $files)
             "telephoneU" => $telephoneU,
             "adresseU" => $adresseU,
             "salaireU" => $salaireU,
-            "login" => $login,
-            "password" => $password,
-            "idR" => $idR,
+            "loginU" => $loginU,
+            "passwordU" => $passwordU,
             "photoU" => $files['photoU']['name'],
+            "idU" => $idU
         ];
         to_upload_Utilisateur($files, "photoU");
         $result = edit_utilisateur_db($utilisateur);
-        var_dump($result);die;
+        //var_dump($result);die;
         if ($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;
         } else {

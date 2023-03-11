@@ -55,16 +55,23 @@ if (isset($_SESSION["arrayError"])) {
                 <input type="text" class="form-control" name="salaireU" id="salaireU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['salaireU'] : '' ?>">
                 <span class="erreur"><?=isset($arrayError) && isset($arrayError["salaireU"]) ? $arrayError["salaireU"] : '';?></span>
                 <label for="libelle" class="form-label">Login</label>
-                <input type="email" class="form-control" name="login" id="login" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['login'] : '' ?>">
-                <span class="erreur"><?=isset($arrayError) && isset($arrayError["login"]) ? $arrayError["login"] : '';?></span>
+                <input type="email" class="form-control" name="loginU" id="loginU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['loginU'] : '' ?>">
+                <span class="erreur"><?=isset($arrayError) && isset($arrayError["loginU"]) ? $arrayError["loginU"] : '';?></span>
                 <label for="libelle" class="form-label">Mot de passe</label>
-                <input type="text" class="form-control" name="password" id="password" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['password'] : '' ?>">
-                <span class="erreur"><?=isset($arrayError) && isset($arrayError["password"]) ? $arrayError["password"] : '';?></span>
+                <input type="text" class="form-control" name="passwordU" id="passwordU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['passwordU'] : '' ?>">
+                <span class="erreur"><?=isset($arrayError) && isset($arrayError["passwordU"]) ? $arrayError["passwordU"] : '';?></span>
                 <label for="libelle" class="form-label">Role</label>
                 <select name="idR" id="categorie" class="form-control">
-                    <option value=" <?php ($utilisateurEdit['idU'])?> ">Selectionnez le role</option>
+                    <option value="0">Selectionnez le role</option>
                     <?php foreach ($categories as $categorie) : ?>
+                    <?php if (isset($utilisateurEdit)&&$categorie["idR"] == $utilisateurEdit['idR']): ?>
+                        <option value="<?= $categorie['idR'] ?>" selected><?= $categorie['libelleR'] ?></option>
+                    <?php endif ?>
+                    <?php if (!isset($utilisateurEdit) || $categorie["idR"] != $utilisateurEdit['idR']): ?>
                         <option value="<?= $categorie['idR'] ?>"><?= $categorie['libelleR'] ?></option>
+                    <?php endif ?>
+                        
+                        
                     <?php endforeach; ?>
                 </select>
                 <label for="libelle" class="form-label">Photo</label>

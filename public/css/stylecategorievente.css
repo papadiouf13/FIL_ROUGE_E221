@@ -347,7 +347,7 @@ body{
  }
  .page__product {
     background-color: black;
-    margin: 30px;
+    margin: 5px;
     border-radius: 20%;
     padding: 5px;
     display: inline-block;
@@ -356,6 +356,8 @@ body{
 
 .page__product a{
     padding: 5px;
+    color: aliceblue;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 900px){

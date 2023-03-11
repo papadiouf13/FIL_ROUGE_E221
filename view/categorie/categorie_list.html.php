@@ -5,11 +5,6 @@ if (isset($_SESSION["error"])) {
     $arrayError = $_SESSION["error"];
     unset($_SESSION["error"]);
 }
-
-if (isset($_SESSION["val_temp"])) {
-    $valtemp = $_SESSION["val_temp"];
-    unset($_SESSION["val_temp"]);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +48,7 @@ if (isset($_SESSION["val_temp"])) {
                                 &nbsp;&nbsp;
                                 <a href="<?=WEB_ROUTE.'?controller=categorieController&view=delet&idCC='.$value['idCC']?>" 
                                 onclick="confirm('Vouslez-vous vraiment supprimer ?')"
-                                 class="text-white" >
-                                  <i class="fa-solid fa-trash"></i>Supprimer</a>
+                                 class="text-white" >Supprimer</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

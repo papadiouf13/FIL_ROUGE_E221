@@ -30,14 +30,14 @@ if (isset($_SESSION["error"])) {
             <div class=".f-controler">
             <div class="hauttableau">
                 <div class="redirection">
-                    <button class="breukh"><a href="<?= WEB_ROUTE . "?controller=fournisseur&view=fournisseur" ?>" style="color:aliceblue">Ajouter un Fournisseur</a>
+                    <button class="breukh"><a href="<?= WEB_ROUTE . "?controller=catventeController&view=categorievente" ?>" style="color:aliceblue">Ajouter une Categorie Vente</a>
                     </button>
                 </div>
                 <div class="barrederecherche">
                     <div class="rechercher">
                         <form action="<?= WEB_ROUTE ?>" method="get" class="form_recherche">
-                            <input type="hidden" name="controller" value="fournisseur">
-                            <input type="hidden" name="view" value="fournisseur_list">
+                            <input type="hidden" name="controller" value="catventeController">
+                            <input type="hidden" name="view" value="categorievente_list">
                             <label for="" style="font-size: 1.2em; font-weight: bold;">Recherche</label>
                             <input type="text" name="recherche" class="butt">
                             <button class="butte" name="OK">OK</button>
@@ -54,7 +54,7 @@ if (isset($_SESSION["error"])) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($categorieconfectionlist as $key => $value): ?>
+                        <?php foreach ($categorieventelist as $key => $value): ?>
                         <tr>
                             <td><?= $key+1 ?></td>
                             <td><?= $value["libelleCAV"] ?></td>
@@ -64,15 +64,29 @@ if (isset($_SESSION["error"])) {
                                 &nbsp;&nbsp;
                                 <a href="<?=WEB_ROUTE.'?controller=catventeController&view=delet&idCAV='.$value['idCAV']?>" 
                                 onclick="confirm('Vouslez-vous vraiment supprimer ?')"
-                                 class="text-white" >
-                                  <i class="fa-solid fa-trash"></i>Supprimer</a>
+                                 class="text-white" >Supprimer</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
-       
+            <div class="nbrepage__product">
+            <nav class="nav__pagination" aria-label="Page navigation example">
+                <ul class="justify__product">
+                    <?php
+                    if (isset($nbrPage)) :
+
+
+                    ?>
+                        <?php for ($i = 1; $i <= $nbrPage; $i++) : ?>
+                            <li class="page__product"><a class="page-link" href="<?= WEB_ROUTE . '?controller=catventeController&view=categorievente_list&page=' . $i ?>">
+                                    <?= $i ?></a></li>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+        </div>
     </div>
 
 </body>

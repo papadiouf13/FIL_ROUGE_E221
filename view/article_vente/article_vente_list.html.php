@@ -30,7 +30,7 @@ if (isset($_SESSION["error"])) {
             <div class="element__content">
                 <div class="hauttableau">
                     <div class="redirection">
-                        <button class="preukh"><a href="<?= WEB_ROUTE . "?controller=articleConfectionController&view=add_article" ?>" style="color:aliceblue">Ajouter un Article</a>
+                        <button class="preukh"><a href="<?= WEB_ROUTE . "?controller=articleVenteController&view=add_article" ?>" style="color:aliceblue">Ajouter un Article de vente</a>
                         </button>
                     </div>
                     <div class="barrederecherche">
