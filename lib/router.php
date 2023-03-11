@@ -15,6 +15,8 @@ if (isset($_REQUEST['controller'])) {
         require_once(ROUTE_DIR.'controller/venteController.php');
     }elseif($_REQUEST['controller'] == "client") {
         require_once(ROUTE_DIR.'controller/clientController.php');
+    }elseif($_REQUEST['controller'] == "utilisateur") {
+        require_once(ROUTE_DIR.'controller/utilisateurController.php');
     } elseif ($_REQUEST['controller'] == "articleConfectionController") {
         require_once(ROUTE_DIR.'controller/articleConfectionController.php');
     } elseif ($_REQUEST['controller'] == "catventeController") {

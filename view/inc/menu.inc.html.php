@@ -130,6 +130,20 @@
           <li><a href="<?= WEB_ROUTE . "?controller=client&view=client_list" ?>">Liste Client</a></li>
         </ul>
       </li>
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class="fa fa-user-plus" style="font-size:20px;color:white"></i>
+            <span class="link_name">Utilisateur</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a href="<?= WEB_ROUTE . "?controller=utilisateur&view=utilisateur" ?>">Ajouter Utilisateur</a></li>
+          <li><a href="<?= WEB_ROUTE . "?controller=utilisateur&view=utilisateur_list" ?>">Liste Utilisateur</a></li>
+        </ul>
+      </li>
+
       <li>
         <a href="#">
           <i class='bx bx-cog'></i>

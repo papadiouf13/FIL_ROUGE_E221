@@ -1,35 +1,33 @@
-.container__former{
+.container___form{
     width: 100%;
-    min-height: 93vh;
+    min-height: 90vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    
+    margin: 0;
+    padding: 0;
 }
 body{
     background-image: url(../images/image.avif);
     background-size: cover;
 }
-.titre{
-    text-align: center;
-}
-.erreur{
-    color: red;
-}
 
 
-.container__former form{
+.container___form form{
     width: 700px;
     height: auto;
     padding: 10px;
     background-color: #dfdfdf;
 }
-.batt{
-    width: 40%;
+.butt{
+    width: 50%;
     height: 30px;
 }
-.batte{
-    width: 5%;
+.butte{
+    width: 10%;
+    height: 5vh;
     background-color: black;
     color: aliceblue;
 
@@ -38,14 +36,13 @@ body{
     background-color: #FFF;
 }
 
-.former-controler{
+.form-controler{
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
-.title__form{
-    
-    width: 20%;
+.breukh{
+    text-align: center;
     height: 40px;
     padding: 5px;
     outline: none;
@@ -54,9 +51,10 @@ body{
     background-color: rgb(0, 0, 0);
     color: #FFF;
     font-size: 1.2em;
+    margin-bottom: 1em
 }
 
-.former-controler input{
+.form-controler input{
     width: 100%;
     height: 35px;
     padding: 5px;
@@ -67,8 +65,19 @@ body{
 }
 
 
-.former-controler button{
+.bouroudj{
     width: 40%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #FFF;
+    font-size: 1.2em;
+}
+.form-controler button.hauttableau.redirection.breukh{
+    width: 70%;
     height: 35px;
     padding: 5px;
     outline: none;
@@ -79,15 +88,17 @@ body{
     margin-left: 25%;
     font-size: 1.2em;
 }
-.tableeau-style{
+/* Partie tableau  */
+.tableau-style{
     border-collapse: collapse;
-    min-width: 700px;
+    min-width: 1000px;
     width: auto;
     box-shadow: 0 5px 50px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     margin: 50px auto;
     border: 2px solid #f3f3f3;
-    margin-left: -10%;
+    margin-left: 10%;
+    background-color: rgb(194, 194, 194);
 }
  thead tr{
     background-color: black;
@@ -104,7 +115,7 @@ body{
 
  }
  tbody tr:nth-child(even){
-    background-color: #f3f3f3;
+    background-color: #d6d6d6;
  }
  tbody tr:last-of-type{
     border-bottom: 2px solid midnightblue;
@@ -115,7 +126,9 @@ body{
     height: 35vh;
 }
 
-
+.erreur{
+    color: red;
+}
 
 .container__form__generic_product{
     position: relative;
@@ -135,23 +148,19 @@ body{
 }
 
 .row_product{
-    width: 80%;
-    
+    width: 900px;
+    max-width: 100%;
     height: auto;
 }
 
 .element__content{
     display: flex;
-    width: 100%;
+    margin: 5px;
+    width: 120%;
     justify-content: center;
     flex-direction: column;
 }
-.code{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1em;
-}
+
 .rechercher__product form{
     position: relative;
     display: flex;
@@ -161,10 +170,9 @@ body{
 }
 
 .form__controler__product{
-    width: 100%;
+    width: 882px;
     height: 70px;
     display: flex;
-    justify-content: center;
 }
 
 .butt__product{
@@ -190,17 +198,6 @@ body{
     border-radius: 5px;
     font-size: 20px;
 }
-.preukh{
-    text-align: center;
-    height: 40px;
-    padding: 5px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(0, 0, 0);
-    color: #FFF;
-    font-size: 1.2em;
-}
 
 .separation__box{
     display: flex;
@@ -218,7 +215,7 @@ body{
     margin: 10px;
 }
 .img {
-    width: 100%;
+    width: 235px;
     height: 200px;
 }
 
@@ -242,13 +239,40 @@ body{
     font-size: 20px;
     font-weight: 400;
 }
-
+.container___form .form_recherche{
+    width: 100%;
+    height: 12vh;
+}
+.form-controler .form_recherche input{
+     width: 70%;
+    height: 35px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
 .action__product{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+.hauttableau{
+    /* border: 2px solid red; */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+}
+.redirection{
+   /* border: 2px solid yellow; */
+    width: 30%;
+}
+.barrederecherche{
+    /* border: 2px solid rgb(15, 121, 234); */
+    width: 40%;
+}
 .edit__product{
     width: 100px;
     height: 30px;
@@ -283,47 +307,6 @@ body{
     display: none;
     
  }
- .hauttableau{
-    /* border: 2px solid red; */
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-}
-.redirection{
-   /* border: 2px solid yellow; */
-    width: 30%;
-    display: flex;
-    justify-content: right;
-}
-.barrederecherche{
-   /*  border: 2px solid rgb(15, 121, 234); */
-    width: 35%;
-}
-.barrederecherche input{
-    border: 2px solid;
-    width: 70%;
-    height: 40px;
-    border-radius: 5px;
-}
-.barrederecherche button{
-    background-color: black;
-    color: #FFF;
-    width: 10%;
-}
-.breukh{
-    width: 70%;
-    height: 30px;
-    padding: 5px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: black;
-    color: #FFF;
-    font-size: 1em;
-    
-}
 
 .nbrepage__product{
     display: flex;
@@ -350,56 +333,50 @@ body{
     margin: 5px;
     width: 50px;
     height: 60px;
+    
  }
  .page__product {
     background-color: black;
-    margin: 5px;
+    margin: 30px;
     border-radius: 20%;
     padding: 5px;
     display: inline-block;
 
 }
-.update_image{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
+
 .page__product a{
     padding: 5px;
-    color: #FFF;
-    text-decoration: none;
+    color: white;
 }
 @media screen and (max-width: 900px){
-    .container__former form {
+    .container___form{
         width: 100%;
     }
-    .engloge_categorie_vente{
+    .container___form form {
         width: 100%;
     }
-    .preukh{
+    .breukh{
         margin-bottom: 2em;
+       
     }
-    .form__controler__product{
-        width: 100%;
-    }
-    .img img{
-        width: 100%;
+    .responsivetableau{
+        overflow: auto;
     }
    
   }
-  @media screen and (max-width: 713px) {
-    .container__former form {
+  @media screen and (max-width: 300px){
+    .container___form{
         width: 100%;
     }
-  }
-  @media screen and (max-width: 350px) {
-    .container__former form {
+    .container___form form {
         width: 100%;
     }
-    .separation__box{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .breukh{
+        margin-bottom: 2em;
+       
+    }
+    .responsivetableau{
+        overflow: auto;
     }
    
   }
