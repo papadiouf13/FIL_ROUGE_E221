@@ -71,7 +71,11 @@ if (isset($_SESSION["error"])) {
                                 <td><?= $value["prenomC"] ?></td>
                                 <td><?= $value["telephoneC"] ?></td>
                                 <td><?= $value["adresseC"] ?></td>
-                                <td><?= $value["photoC"] ?></td>
+                                <td>
+                                    <div class="imag">
+                                         <img src="<?= WEB_ROUTE . '/images/client/' . $value['photoC'] ?>" alt="" class="imag">
+                                    </div>
+                                </td>
                                 <td>
                                     <a href="<?= WEB_ROUTE . '?controller=client&view=editer&idC=' . $value['idC'] ?>" class="btn btn-secondary"><i class="fa fa-edit" style="font-size:30px;color:blue"></i></a>
                                     &nbsp;&nbsp;

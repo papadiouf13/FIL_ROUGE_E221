@@ -27,16 +27,16 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 } elseif ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['action'])) {
         if ($_POST["action"] == "add") {
-            ajout_client($_POST);
+            ajout_client($_POST, $_FILES);
         } elseif ($_POST["action"] == "editer") {
-            edit_client($_POST);
+            edit_client($_POST, $_FILES);
         }
     }
 }
 
 
 
-function ajout_client($data)
+function ajout_client($data , $files)
 {
     $arrayError = array();
     extract($data);
@@ -44,16 +44,15 @@ function ajout_client($data)
     valide_libelle($arrayError, "nomC", $nomC);
     valide_libelle($arrayError, "telephoneC", $telephoneC);
     valide_libelle($arrayError, "adresseC", $adresseC);
-
     if (empty($arrayError)) {
         $client = [
             "prenomC" => $prenomC,
             "nomC" => $nomC,
             "telephoneC" => $telephoneC,
             "adresseC" => $adresseC,
-            "photoC" => $photoC,
+            "photoC" => $files['photoC']['name'],
         ];
-
+        to_upload_Client($files, "photoC");
         $result = ajout_client_db($client);
         if ($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;
@@ -69,27 +68,24 @@ function ajout_client($data)
     }
 }
 
-function edit_client($data)
+function edit_client($data, $files)
 {
     $arrayError = array();
     extract($data);
-    valide_libelle($arrayError, "prenom", $prenom);
-    valide_libelle($arrayError, "nom", $nom);
-    valide_libelle($arrayError, "telephonePort", $telephonePort);
-    valide_libelle($arrayError, "telephonefixe", $telephonefixe);
-    valide_libelle($arrayError, "adresse", $adresse);
-
+    valide_libelle($arrayError, "prenomC", $prenomC);
+    valide_libelle($arrayError, "nomC", $nomC);
+    valide_libelle($arrayError, "telephoneC", $telephoneC);
+    valide_libelle($arrayError, "adresseC", $adresseC);
     if (empty($arrayError)) {
         $client = [
-            "nom" => $nom,
-            "prenom" => $prenom,
-            "telephonePort" => $telephonePort,
-            "telephonefixe" => $telephonefixe,
-            "adresse" => $adresse,
-            "photoF" => $photoF,
+            "prenomC" => $prenomC,
+            "nomC" => $nomC,
+            "telephoneC" => $telephoneC,
+            "adresseC" => $adresseC,
+            "photoC" => $files['photoC']['name'],
             "idC" => $idC
         ];
-
+        to_upload_Client($files, "photoC");
         $result = edit_client_db($client);
         if ($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;

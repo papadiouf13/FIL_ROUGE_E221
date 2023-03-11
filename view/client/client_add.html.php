@@ -25,7 +25,7 @@ if (isset($_SESSION["arrayError"])) {
     <div class="container___form">
     <button class="breukh"><a href="<?=WEB_ROUTE."?controller=client&view=client_list"?>" style="color:aliceblue">Liste client</a>
     </button>
-        <form action="<?=WEB_ROUTE?>" method="post">
+    <form action="<?= WEB_ROUTE ?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="controller" value="client">
                 <?php if(!isset($clientEdit) || $clientEdit['idC'] == null): ?>
                     <input type="hidden" name="action" value="add">
@@ -53,7 +53,12 @@ if (isset($_SESSION["arrayError"])) {
                 <span class="erreur"><?=isset($arrayError) && isset($arrayError["adresseC"]) ? $arrayError["adresseC"] : '';?></span>
                 <label for="libelle" class="form-label">Photo</label>
                 <input type="file" class="form-control" name="photoC" id="photoC" value="<?= isset($clientEdit) ? $clientEdit['photoC'] : '' ?>">
-                <span class="erreur"><?=isset($arrayError) && isset($arrayError["photoC"]) ? $arrayError["photoC"] : '';?></span>
+                <div>
+                <img src="<?= WEB_ROUTE . '/images/uploads/' . $clientEdit['photoC'] ?>" alt="" class="update_image">
+                </div>
+                <!-- <label for="libelle" class="form-label">Photo</label>
+                <input type="file" class="form-control" name="photoC" id="photoC" value="<?= isset($clientEdit) ? $clientEdit['photoC'] : '' ?>">
+                <span class="erreur"><?=isset($arrayError) && isset($arrayError["photoC"]) ? $arrayError["photoC"] : '';?></span> -->
 
             </div>
             <div class="form-controler">

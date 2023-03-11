@@ -14,7 +14,11 @@ body{
     background-size: cover;
 }
 
-
+.imag{
+    max-width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 .container___form form{
     width: 700px;
     height: auto;
