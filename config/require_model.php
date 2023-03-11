@@ -4,6 +4,7 @@ require_once(ROUTE_DIR."model/db.php");
 require(ROUTE_DIR.'model/categorieconfection.php');
 require(ROUTE_DIR.'model/fournisseur.php');
 require(ROUTE_DIR.'model/approvisionnement.php');
+require(ROUTE_DIR.'model/vente.php');
 require(ROUTE_DIR.'model/articleConfection.php');
 require(ROUTE_DIR.'model/catconfectionvente.php');
 require(ROUTE_DIR.'model/articlevente.php');
