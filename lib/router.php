@@ -7,6 +7,8 @@ if (isset($_REQUEST['controller'])) {
     }
     elseif($_REQUEST['controller'] == "categorieController") {
         require_once(ROUTE_DIR.'controller/categorieController.php');
+    }elseif($_REQUEST['controller'] == "tableaubord") {
+        require_once(ROUTE_DIR.'controller/tableaubordController.php');
     }elseif($_REQUEST['controller'] == "fournisseur") {
         require_once(ROUTE_DIR.'controller/fournisseurController.php');
     }elseif($_REQUEST['controller'] == "approvisionnement") {

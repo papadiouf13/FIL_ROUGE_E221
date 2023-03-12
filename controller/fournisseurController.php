@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                 $page = (int)$_GET['page'];
             }
             $totalList = show_all_fournisseur();
-            $fournisseurlist = get_list_per_page($totalList,$page, 3);
-            $nbrPage = get_nbrpage($totalList, 3);
+            $fournisseurlist = get_list_per_page($totalList,$page, 4);
+            $nbrPage = get_nbrpage($totalList, 4);
             require_once(ROUTE_DIR . 'view/fournisseur/fournisseur_list.html.php');
         } elseif ($_GET['view'] == "editer") {
             $idF = (int) $_GET["idF"];

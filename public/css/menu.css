@@ -36,6 +36,13 @@
   text-align: center;
   line-height: 50px;
 }
+.sidebar .logo{
+  display: flex;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
 .sidebar .logo-details .logo_name{
   font-size: 22px;
   color: #fff;

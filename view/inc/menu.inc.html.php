@@ -13,15 +13,22 @@
 <body>
   <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+      <!-- <i class='bx bxl-c-plus-plus'></i> -->
+      <img src="images/logo.png.png" alt="profileImg" class="logo">
       <span class="logo_name">FIL ROUGE</span>
     </div>
     <ul class="nav-links">
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="link_name">Tableau</span>
-        </a>
+    <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-grid-alt'></i>
+            <span class="link_name">TABLEAU BORD</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a href="<?= WEB_ROUTE . "?controller=tableaubord&view=tableaubord" ?>">Tableau Bord</a></li>
+        </ul>
       </li>
       <li>
         <div class="iocn-link">
@@ -42,6 +49,7 @@
             <i class="fa fa-user" style="font-size:20px;color:white"></i>
             <span class="link_name">Fournisseur</span>
           </a>
+          <i class='bx bxs-chevron-down arrow'></i>
         </div>
         <ul class="sub-menu">
           <li><a href="<?= WEB_ROUTE . "?controller=fournisseur&view=fournisseur" ?>">Ajouter Fournisseur</a></li>
@@ -52,7 +60,7 @@
         <div class="iocn-link">
           <a href="#">
             <i class='bx bx-book-alt'></i>
-            <span class="link_name">Approvisionnement</span>
+            <span class="link_name">Approvisioment</span>
           </a>
           <i class='bx bxs-chevron-down arrow'></i>
         </div>
@@ -124,6 +132,7 @@
             <i class="fa fa-users" style="font-size:20px;color:white"></i>
             <span class="link_name">Client</span>
           </a>
+          <i class='bx bxs-chevron-down arrow'></i>
         </div>
         <ul class="sub-menu">
           <li><a href="<?= WEB_ROUTE . "?controller=client&view=client" ?>">Ajouter Client</a></li>
@@ -137,6 +146,7 @@
             <i class="fa fa-user-plus" style="font-size:20px;color:white"></i>
             <span class="link_name">Utilisateur</span>
           </a>
+          <i class='bx bxs-chevron-down arrow'></i>
         </div>
         <ul class="sub-menu">
           <li><a href="<?= WEB_ROUTE . "?controller=utilisateur&view=utilisateur" ?>">Ajouter Utilisateur</a></li>
@@ -144,7 +154,7 @@
         </ul>
       </li>
 
-      <li>
+      <!-- <li>
         <a href="#">
           <i class='bx bx-cog'></i>
           <span class="link_name">Setting</span>
@@ -152,7 +162,7 @@
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Setting</a></li>
         </ul>
-      </li>
+      </li> -->
       <li>
         <div class="profile-details">
           <div class="profile-content">
@@ -161,8 +171,8 @@
           <div class="name-job">
             <div class="profile_name">Mamadou Diouf</div>
             <div class="job">Developpeur Web</div>
+            <a href="<?= WEB_ROUTE . "?controller=deconnexion&view=dehors" ?>"><i class='bx bx-log-out'>Deconnexion</i></a>
           </div>
-          <a href="<?= WEB_ROUTE . "?controller=deconnexion&view=dehors" ?>"><i class='bx bx-log-out'>Deconnexion</i></a>
         </div>
       </li>
     </ul>

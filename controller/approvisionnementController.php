@@ -170,6 +170,7 @@ function getData($data)
                     "idF" =>  $_SESSION['selection']['idF'],
                     "categorie" => $_SESSION['selection']['categorieAC'],
                     "prixAP" => $prixAP,
+                    'idU' => $userconnect['idU'],
                     "quantiteAP" => $value['quantiteAP'] + $quantiteAP,
                     "produitAP" => $produitAP,
                     "montantAP" => (int) $prixAP * (int) ($value['produitAP'] + $quantiteAP)
@@ -197,6 +198,7 @@ function getArray($post)
         "fournisseur" =>  $_SESSION['selection']['idF'],
         "categorie" => $_SESSION['selection']['categorieAC'],
         "prixAP" => $prixAP,
+        'idU' => $userconnect['idU'],
         "quantiteAP" => $quantiteAP,
         "produitAP" => $produitAP,
         "montantAP" => (int) $prixAP * (int) $quantiteAP
