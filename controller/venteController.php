@@ -77,7 +77,6 @@ function boutton_OK()
     $_SESSION['selection']['dateAP'] = $_POST['dateAP'];
     $_SESSION['selection']['idC'] = $_POST['idC'];
     $_SESSION['selection']['categorieAV'] = $_POST['categorieAV'];
-    //var_dump($_SESSION['selection']['categorieAV']);die;
     $typearticlevente = selection_categorie_vente((int) $_POST['categorieAV']);
     $_SESSION['selection']['typecategorieconfection'] = $typearticlevente;
     $_SESSION['selection']['produitAP'] = $_POST['produitAP'];
@@ -91,7 +90,7 @@ function ajout_vente($data)
 {
     $arrayError = array();
     //extract($data);
-
+    valide_libelle($arrayError, "montantAP",$data['valeur_total']);
     /*  valide_libelle($arrayError, "prixAP", $prixAP);
     valide_libelle($arrayError, "quantiteAP", $quantiteAP);
     est_entier($arrayError, "montantAP", $montantAP);

@@ -12,14 +12,8 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
 		$user = get_list_per_page($totalList,$page, 4);
 		$nbrPage = get_nbrpage($totalList, 4);
 	    require(ROUTE_DIR.'view/tableaubord/tableaubord.html.php');
-	   }/* elseif($_GET['view']=='inscription')  {
-	    require(ROUTE_DIR.'view/security/inscription.html.php');
-	   } */
-	   elseif($_GET['view']=='dehors')  {
-	       deconnexion();
 	   }
 	}else {
-	    // require(ROUTE_DIR.'view/bien/catalogue.html.php');
 	    require(ROUTE_DIR.'view/security/connexion.html.php');
 	}
 }elseif ($_SERVER['REQUEST_METHOD']=='POST') {
@@ -28,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
 			connexion($_POST['login'], $_POST['password']);
 		}
 	} else {
-		// require(ROUTE_DIR.'view/bien/catalogue.html.php');
 		require(ROUTE_DIR.'view/security/connexion.html.php');
 	    }
 }

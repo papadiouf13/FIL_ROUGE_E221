@@ -30,7 +30,7 @@ body{
     background-color: rgb(217, 214, 214);
 }
 .tableau{
-    border: 2px solid rgb(25, 218, 76);
+    /* border: 2px solid rgb(25, 218, 76); */
     width: 60%;
 }
 .ligne1{
@@ -74,6 +74,16 @@ body{
     height: 4.5vh;
     font-size: 1.2em;
     margin-top: 30px;
+    
+}
+.btn-supprimer{
+    background-color: rgb(220, 73, 73);
+    color: aliceblue;
+    width: 50%;
+    height: 4.5vh;
+    font-size: 1.2em;
+    margin-top: 30px;
+    border: none;
 }
 .a{
     width: 40%;
@@ -110,9 +120,10 @@ body{
     font-size: 1.2em;
 }
 .b button{
-    width: 8%;
-    height: 5vh;
+    width: 100%;
+    height: 4vh;
     margin: 3%;
+    margin-top: 30px;
     background-color: black;
     color: white;
 }

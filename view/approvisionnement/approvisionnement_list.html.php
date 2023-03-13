@@ -52,10 +52,9 @@ if (isset($_SESSION["error"])) {
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Nom du Fournisseur</th>
                         <th>Montant</th>
-                        <th>idF</th>
                         <th>Date</th>
-                        <th>Details</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -65,11 +64,11 @@ if (isset($_SESSION["error"])) {
                     foreach ($approvisionnementlist as $key => $value) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
+                            <td><?= $value["prenom"]." ".$value["nom"] ?></td>
                             <td><?= $value["montantAP"] ?></td>
-                            <td><?= $value["idF"] ?></td>
                             <td><?= $value["dateAP"] ?></td>
-                            <td><button><a href="<?= WEB_ROUTE . "?controller=approvisionnement&view=detail&idAPP=".$value['idAPP'] ?>">DETAIL</a></button></td>
                             <td>
+                            <a href="<?= WEB_ROUTE . "?controller=approvisionnement&view=detail&idAPP=".$value['idAPP'] ?>" class="btn btn-secondary"><i class="fa fa-eye" style="font-size:30px;color:black;padding:10px"></i></a>
                                 <a href="<?= WEB_ROUTE . '?controller=approvisionnement&view=editer&idAPP=' . $value['idAPP'] ?>" class="btn btn-secondary"><i class="fa fa-edit" style="font-size:25px;color:blue"></i></a>
                                 &nbsp;&nbsp;
                                 <a href="<?= WEB_ROUTE . '?controller=approvisionnement&view=supprimer&idAPP=' . $value['idAPP'] ?>" onclick="confirm('Vouslez-vous vraiment supprimer ?')" class="text-white">

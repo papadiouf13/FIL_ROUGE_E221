@@ -58,7 +58,7 @@ if (isset($_SESSION["arrayError"])) {
                 <input type="email" class="form-control" name="loginU" id="loginU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['loginU'] : '' ?>">
                 <span class="erreur"><?=isset($arrayError) && isset($arrayError["loginU"]) ? $arrayError["loginU"] : '';?></span>
                 <label for="libelle" class="form-label">Mot de passe</label>
-                <input type="text" class="form-control" name="passwordU" id="passwordU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['passwordU'] : '' ?>">
+                <input type="password" class="form-control" name="passwordU" id="passwordU" value="<?= isset($utilisateurEdit) ? $utilisateurEdit['passwordU'] : '' ?>">
                 <span class="erreur"><?=isset($arrayError) && isset($arrayError["passwordU"]) ? $arrayError["passwordU"] : '';?></span>
                 <label for="libelle" class="form-label">Role</label>
                 <select name="idR" id="categorie" class="form-control">

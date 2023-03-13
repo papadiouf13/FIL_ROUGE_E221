@@ -13,10 +13,10 @@
 }
 
 function edit_articleconfection_db(array $articleconfection) {
-    var_dump($articleconfection);die;
+    
     $conn = get_connection();
     try {
-        $sql = "UPDATE articleconfection SET libelleAC=:libelleAC,prixAC=:prixAC,quantiteAC=:quantiteAC,montantAV=:montantAV,photoAC=:photoAC,idCC=:idCC WHERE idAC=:idAC";
+        $sql = "UPDATE articleconfection SET libelleAC=:libelleAC,prixAC=:prixAC,quantiteAC=:quantiteAC,montantAC=:montantAC,photoAC=:photoAC,idCC=:idCC WHERE idAC=:idAC";
         $stmt = $conn->prepare($sql);
         $stmt->execute($articleconfection);
         return true;

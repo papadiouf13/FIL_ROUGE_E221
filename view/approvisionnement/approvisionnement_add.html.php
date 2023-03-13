@@ -157,8 +157,9 @@ if (isset($_SESSION['articleconfection'])) {
 
 
                                      <td>
-                                    <a href="" onclick="confirm('Vouslez-vous vraiment supprimer ?')" class="text-white">
-                                        <i class="fa-solid fa-trash"></i>Supprimer</a>
+                                     <!-- <input type="submit" name="supprimer" value="supprimer" class="btn-ajouter"> -->
+                                        <button type="submit" name="supprimer" value="<?=$value['produitAP'] ?>">SUPPRIMER</button>
+                                    <!-- <a href="<?= WEB_ROUTE . '?controller=approvisionnement&view=supprimer&idAC=' . $value['produitAP'] ?>" onclick="confirm('Vouslez-vous vraiment supprimer ?')" class="text-white"></i>Supprimer</a> -->
                                 </td>
                                 </tr>
                             <?php endforeach; ?>

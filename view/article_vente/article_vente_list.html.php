@@ -88,37 +88,7 @@ if (isset($_SESSION["error"])) {
             </div>
         </div>
     </div>
-    <!--         PARTIE DE LE PAGINATION-->
 
 
 </body>
-
 </html>
-<!-- <style>
-    .page {
-        background-color: black;
-        width: 15%;
-        height: 4%;
-        display: inline-block;
-
-    }
-
-    .page-link {
-        display: flex;
-        justify-content: center;
-        justify-content: center;
-        font-size: 30px;
-        text-decoration: none;
-        color: white;
-    }
-
-    .justify {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .nbrepage {
-        width: 50%;
-        margin-left: 100%;
-    }
-</style> -->

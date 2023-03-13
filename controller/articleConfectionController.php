@@ -90,9 +90,11 @@ function edit_articleconfection($data, $files) {
             "montantAC" => (int)$prixAC * (int)$quantiteAC,
             "idCC" => (int)$categorieAC,
             "photoAC" => $files['photoAC']['name'],
+            "idAC" => $idAC
         ];
-    var_dump($articleconfection);die;
+        to_uploads($files, "photoAC");
         $result = edit_articleconfection_db($articleconfection);
+        //var_dump($result);die;
         if($result) {
             $_SESSION["success_operation"] = SUCCESS_MSG;
             header("Location:".WEB_ROUTE."?controller=articleConfectionController&view=article_list");

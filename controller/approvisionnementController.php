@@ -38,6 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         if ($_POST["action"] == "add") {
             if (isset($_POST['OK'])) {
                 boutton_OK();
+            }elseif ($_POST["supprimer"]) {
+                extract($_POST);  
+                $approarticlelist = $_SESSION['array'];
+                $newtab=[];
+                $supp= $_POST['supprimer'];
+                foreach ($approarticlelist as $key => $value) {
+                    if ($supp != $value['produitAP']) {
+                        array_push($newtab,$value);
+                    }
+                    
+                }
+                $_SESSION['array'] = $newtab;
+                header("Location:" . WEB_ROUTE . "?controller=approvisionnement&view=approvisionnement");
             }elseif (isset($_POST['val'])) { 
                 extract($_POST);  
                 $result = get_articleconfection_by_id_bd((int) $produitAP);
@@ -82,7 +95,6 @@ function boutton_OK()
     $_SESSION['selection']['produitAP'] = $_POST['produitAP'];
     $_SESSION['selection']['prixAP'] = $_POST['prixAP'];
 
-    //var_dump($_SESSION['selection']['rawane']);die;
     header("Location:" . WEB_ROUTE . "?controller=approvisionnement&view=approvisionnement");
 }
 
@@ -91,10 +103,8 @@ function ajout_approvisionnement($data)
     $arrayError = array();
     //extract($data);
 
-    /*  valide_libelle($arrayError, "prixAP", $prixAP);
-    valide_libelle($arrayError, "quantiteAP", $quantiteAP);
-    est_entier($arrayError, "montantAP", $montantAP);
-    valide_libelle($arrayError, "idF", $idF); */
+ 
+    valide_libelle($arrayError, "montantAP",$data['valeur_total']);
     $userconnect = $_SESSION['userConnect'];
     if (empty($arrayError)) {
         $newapprovisionnement = [
@@ -209,11 +219,11 @@ function show_all_approvisionnement()
     if (isset($_GET['OK'])) {
         $approvisionnementlist = filtre_by_appro($_GET['recherche']);
         return $approvisionnementlist;
-        /* require_once(ROUTE_DIR . 'view/fournisseur/fournisseur_list.html.php'); */
+        
     } else {
         $approvisionnementlist = get_all_approvisionnement_db();
+        //var_dump($approvisionnementlist);die;
         return $approvisionnementlist;
-        /*         require_once(ROUTE_DIR . 'view/fournisseur/fournisseur_list.html.php');
- */
+    
     }
 }

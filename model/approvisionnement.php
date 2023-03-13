@@ -58,7 +58,7 @@ function get_all_approvisionnement_db() {
     // connection a la base de donnees
     $conn = get_connection();
     // requete sql
-    $sql = "SELECT * FROM approvisionnement";
+    $sql = "SELECT * FROM approvisionnement ap, fournisseur f WHERE f.idF=ap.idF";
     // execution de la requete sql
     $stmt = $conn->query($sql);
     // ferme la connection a la base de donnees
