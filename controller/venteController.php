@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             $clientlist = get_all_client_db();
             $categories = get_all_categorieconfectionvente_db();
             $articleventelist = get_all_articlevente_db();
-            
+
             require_once(ROUTE_DIR . 'view/vente/vente_add.html.php');
         } elseif ($_GET['view'] == "vente_list") {
             $page = 1;
@@ -21,13 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             $idAPP = (int) $_GET["idAPP"];
             $venteEdit = get_vente_by_id_bd($idAPP);
             require_once(ROUTE_DIR . 'view/vente/vente_add.html.php');
-        }elseif ($_GET['view'] == "detail") {
+        } elseif ($_GET['view'] == "detail") {
             $idV = $_GET['idV'];
             $vente = get_vente_by_id_bd($idV);
             $detailproduit = detail_produit_vente($vente["idV"]);
             require_once(ROUTE_DIR . 'view/vente/detailsproduitvente.html.php');
-        }
-         elseif ($_GET['view'] == "supprimer") {
+        } elseif ($_GET['view'] == "supprimer") {
             $idV = (int) $_GET["idV"];
             $venteDelet = get_vente_by_idV_db($idV);
 
@@ -39,16 +38,29 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         if ($_POST["action"] == "add") {
             if (isset($_POST['OK'])) {
                 boutton_OK();
-                var_dump($_POST);die;
-            }elseif (isset($_POST['val'])) { 
-                extract($_POST);  
+                var_dump($_POST);
+                die;
+            } elseif ($_POST["supprimer"]) {
+                extract($_POST);
+                $articleventelist = $_SESSION['array'];
+                $newtab = [];
+                $supp = $_POST['supprimer'];
+                foreach ($articleventelist as $key => $value) {
+                    if ($supp != $value['produitAP']) {
+                        array_push($newtab, $value);
+                    }
+                }
+                $_SESSION['array'] = $newtab;
+                header("Location:" . WEB_ROUTE . "?controller=vente&view=vente");
+            } elseif (isset($_POST['val'])) {
+                extract($_POST);
                 $result = get_articlevente_by_id_bd((int) $produitAP);
                 $_SESSION['articlevente'] = $result;
                 $_SESSION['articlevente']['produitAP'] = $result['libelleAV'];
                 $_SESSION['articlevente']['prixAV'] = $result['prixAV'];
-                
+
                 header("Location:" . WEB_ROUTE . "?controller=vente&view=vente");
-           } elseif (isset($_POST['save'])) {
+            } elseif (isset($_POST['save'])) {
                 $save = $_POST['save'];
                 if ($save == 'ajouter') {
                     getData($_POST);
@@ -90,7 +102,7 @@ function ajout_vente($data)
 {
     $arrayError = array();
     //extract($data);
-    valide_libelle($arrayError, "montantAP",$data['valeur_total']);
+    valide_libelle($arrayError, "montantAP", $data['valeur_total']);
     /*  valide_libelle($arrayError, "prixAP", $prixAP);
     valide_libelle($arrayError, "quantiteAP", $quantiteAP);
     est_entier($arrayError, "montantAP", $montantAP);
@@ -105,20 +117,19 @@ function ajout_vente($data)
         ];
         $result = ajout_vente_db($newvente);
         $arrayvente = $_SESSION['array'];
-        foreach ($arrayvente as $value){
+        foreach ($arrayvente as $value) {
             $vente = [
-                'idV'=> $result,
-                'idAV'=>$value['produitAP'],
-                'quantiteAP'=>$value['quantiteAP']     
+                'idV' => $result,
+                'idAV' => $value['produitAP'],
+                'quantiteAP' => $value['quantiteAP']
             ];
             ajout_articledeventevente_db($vente);
         }
-         header("Location:" . WEB_ROUTE . "?controller=vente&view=vente_list");
+        header("Location:" . WEB_ROUTE . "?controller=vente&view=vente_list");
     } else {
 
         $_SESSION["arrayError"] = $arrayError;
-         header("Location:" . WEB_ROUTE . "?controller=vente&view=vente");
-
+        header("Location:" . WEB_ROUTE . "?controller=vente&view=vente");
     }
 }
 
@@ -204,7 +215,6 @@ function getArray($post)
         "produitAP" => $produitAP,
         "montantAP" => (int) $prixAP * (int) $quantiteAP
     ];
-
 }
 function show_all_vente()
 {

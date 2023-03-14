@@ -27,7 +27,7 @@ body{
 }
 .formulaire{
     width: 60%;
-    background-color: rgb(217, 214, 214);
+    background-color: rgb(193, 224, 242);
 }
 .tableau{
     /* border: 2px solid rgb(25, 218, 76); */
@@ -63,17 +63,19 @@ body{
     text-align: center;
 }
 .btn_enregistrer{
-    background-color: rgb(73, 86, 236);
+    background-color: rgb(71, 121, 150);
     font-size: 1.2em;
     color: #FFF;
+    border: none;
 }
 .btn-ajouter{
-    background-color: rgb(73, 86, 236);
+    background-color: rgb(71, 121, 150);
     color: aliceblue;
     width: 10%;
     height: 4.5vh;
     font-size: 1.2em;
     margin-top: 30px;
+    border: none;
 }
 .a{
     width: 40%;
@@ -92,11 +94,12 @@ body{
     font-size: 1.2em;
 }
 .a button{
-    background-color: rgb(73, 86, 236);
+    background-color: rgb(71, 121, 150);
     color: aliceblue;
     width: 10%;
     height: 4.5vh;
     font-size: 1.2em;
+    border: none;
 }
 .b{
     display: flex;
@@ -114,7 +117,8 @@ body{
     height: 4vh;
     margin: 3%;
     margin-top: 30px;
-    background-color: rgb(73, 86, 236);
+    background-color: rgb(71, 121, 150);
+    border: none;
     color: white;
 }
 .tableau-style{
@@ -127,7 +131,7 @@ body{
     background-color: rgb(198, 197, 196);
 }
  thead tr{
-    background-color: rgb(73, 86, 236);
+    background-color: rgb(71, 121, 150);
     color: #FFF;
     text-align:left
 

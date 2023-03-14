@@ -52,6 +52,7 @@ function ajout_utilisateur($data, $files)
     valide_libelle($arrayError, "idR", $idR);
 
     if (empty($arrayError)) {
+        
         $utilisateur = [
             "prenomU" => $prenomU,
             "nomU" => $nomU,
@@ -59,7 +60,7 @@ function ajout_utilisateur($data, $files)
             "adresseU" => $adresseU,
             "salaireU" => $salaireU,
             "loginU" => $loginU,
-            "passwordU" => $passwordU,
+            "passwordU" => encode_password($passwordU),
             "idR" => $idR,
             "photoU" => $files['photoU']['name'],
         ];

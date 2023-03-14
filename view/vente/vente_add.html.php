@@ -157,7 +157,8 @@ if (isset($_SESSION['articlevente'])) {
 
 
                                     <td>
-                                        <a href="" onclick="confirm('Vouslez-vous vraiment supprimer ?')" class="text-white">Supprimer</a>
+                                    <button type="submit" name="supprimer" value="<?=$value['produitAP'] ?>">SUPPRIMER</button>
+                                        <!-- <a href="" onclick="confirm('Vouslez-vous vraiment supprimer ?')" class="text-white">Supprimer</a> -->
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
