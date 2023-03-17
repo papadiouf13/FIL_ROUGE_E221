@@ -8,6 +8,7 @@ require(ROUTE_DIR.'model/vente.php');
 require(ROUTE_DIR.'model/articleConfection.php');
 require(ROUTE_DIR.'model/catconfectionvente.php');
 require(ROUTE_DIR.'model/articlevente.php');
+require(ROUTE_DIR.'model/productionvente.php');
 require(ROUTE_DIR.'model/client.php');
 require(ROUTE_DIR.'model/utilisateur.php');
 // require(ROUTE_DIR.'model/affaire.php');

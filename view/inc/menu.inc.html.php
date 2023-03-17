@@ -115,6 +115,21 @@
       <li>
         <div class="iocn-link">
           <a href="#">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">Production Vente</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a href="<?= WEB_ROUTE . "?controller=productionventeController&view=add_article" ?>">Ajouter Production Vente</a></li>
+          <li><a href="<?= WEB_ROUTE . "?controller=productionventeController&view=article_list" ?>">Liste Production Vente</a></li>
+        </ul>
+
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
             <i class='bx bx-book-alt'></i>
             <span class="link_name">VENTE</span>
           </a>

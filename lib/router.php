@@ -25,6 +25,8 @@ if (isset($_REQUEST['controller'])) {
         require_once(ROUTE_DIR.'controller/catventeController.php');
     } elseif ($_REQUEST['controller'] == "articleVenteController") {
         require_once(ROUTE_DIR.'controller/articleVenteController.php');
+    }elseif ($_REQUEST['controller'] == "productionventeController") {
+        require_once(ROUTE_DIR.'controller/productionventeController.php');
     }
 }else {
    require_once(ROUTE_DIR.'controller/securityController.php');
